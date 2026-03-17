@@ -2,7 +2,7 @@ public class Automobil extends Vozila {
 
     int brojVrata;
 
-    public Automobil(int brojVrata, String marka, int godinaProizvodnje, String registracija) {
+    public Automobil(int brojVrata, String marka, int godinaProizvodnje, String registracija) throws NeispravniPodaciException {
         super (marka,registracija,godinaProizvodnje);
         this.brojVrata = brojVrata;
     }
@@ -32,5 +32,8 @@ public class Automobil extends Vozila {
         String[] listaVozila = unos.split("|");
        super.ucitajPodatke(unos);
        this.brojVrata = Integer.parseInt(listaVozila[3]);
+
     }
+
+
 }

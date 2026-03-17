@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-
+import java.io.FileNotFoundException;
 public class EvindencijaVozila {
 
     ArrayList<Vozila> v = new ArrayList<>();
@@ -16,7 +16,8 @@ public class EvindencijaVozila {
         for(Vozila vozila : v){
             try {
                 FileOutputStream vozilo = new FileOutputStream(datoteka);
-                vozilo.write(datoteka.getBytes());
+                String temp = vozila.toString() + "\n";
+                vozilo.write(temp.getBytes());
                 vozilo.close();
             }
             catch(Exception e){
@@ -34,6 +35,7 @@ public class EvindencijaVozila {
         }
         catch(Exception e){
             System.out.println("I/O greška: " + e.getMessage());
+
         }
     }
     }
